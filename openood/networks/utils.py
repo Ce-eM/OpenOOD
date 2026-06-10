@@ -27,6 +27,7 @@ from .patchcore_net import PatchcoreNet
 from .projection_net import ProjectionNet
 from .react_net import ReactNet
 from .resnet18_32x32 import ResNet18_32x32
+from .maxsep_resnet18_32x32 import MaxSepResNet18_32x32
 from .resnet18_64x64 import ResNet18_64x64
 from .resnet18_224x224 import ResNet18_224x224
 from .resnet18_256x256 import ResNet18_256x256
@@ -46,6 +47,9 @@ def get_network(network_config):
 
     if network_config.name == 'resnet18_32x32':
         net = ResNet18_32x32(num_classes=num_classes)
+
+    elif network_config.name == 'maxsep_resnet18_32x32':
+        net = MaxSepResNet18_32x32(num_classes=num_classes)
 
     elif network_config.name == 'resnet18_256x256':
         net = ResNet18_256x256(num_classes=num_classes)
